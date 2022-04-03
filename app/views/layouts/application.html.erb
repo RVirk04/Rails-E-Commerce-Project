@@ -8,8 +8,9 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
-
+  <%= render partial: 'common/header' %>
   <body>
     <%= yield %>
   </body>
+  <button type="button" class="btn btn-primary">Primary</button>
 </html>
