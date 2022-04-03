@@ -7,10 +7,11 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   </head>
   <%= render partial: 'common/header' %>
   <body>
     <%= yield %>
   </body>
-  <button type="button" class="btn btn-primary">Primary</button>
+  <%= render partial: 'common/footer' %>
 </html>
