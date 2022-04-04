@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+require "csv"
+
+Category.destroy_all
+
+# Add file path of the csv file
+csv_file = Rails.root.join('db/categories.csv')
+
+csv_data = File.read(csv_file)
+category = CSV.parse(csv_data, headers: true, encoding: 'iso-8859-1')
+
+category.each do |cat|
+  category = Category.find_or_create_by(name: cat["category"])
+end

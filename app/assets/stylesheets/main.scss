@@ -5,8 +5,10 @@
 
 /* homePageImage */
 .homePageImage {
-  height: 600px;
-  width: 1200px;
-  margin: 0px 150px 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  width: 60%;
   border: 2px solid;
 }
