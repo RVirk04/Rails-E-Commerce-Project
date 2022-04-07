@@ -12,3 +12,11 @@
   width: 60%;
   border: 2px solid;
 }
+
+.add_product{
+  align-items: center;
+  width: 50%;
+  // margin-left: 50px;
+  -ms-transform: translateX(50%);
+  transform: translateX(50%);
+}

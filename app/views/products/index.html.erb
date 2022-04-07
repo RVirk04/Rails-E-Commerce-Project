@@ -1,14 +1,38 @@
-<p style="color: green"><%= notice %></p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Virk</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-<h1>Products</h1>
-
-<div id="products">
-  <% @products.each do |product| %>
-    <%= render product %>
-    <p>
-      <%= link_to "Show this product", product %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New product", new_product_path %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "products", "data-turbo-track": "reload" %>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <%= link_to "Add product", new_product_path, class: "add_product btn btn-success" %>
+    <p style="color: green"><%= notice %></p>
+    <div id="products">
+      <div class="container">
+        <div class="row">
+          <% @products.each do |product| %>
+            <div class="col-md-4 col-sm-6">
+              <div class="product-grid2">
+                <div class="product-image2"><%= link_to image_tag(product.image_url(:default).to_s, class:"pic-1"), product %><%= link_to image_tag(product.image_url(:default).to_s, class:"pic-2"), product %>
+                  <ul class="social">
+                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                    <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                  </ul>
+                </div>
+                <div class="product-content">
+                  <h3 class="title"><a href="#"><%= link_to product.name, product %></a></h3> <span class="price"><%= link_to "$#{product.price}", product %></a></span>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -6,7 +6,8 @@
   <div class="form-inputs">
     <%= f.input :name %>
     <%= f.input :price %>
-    <%= f.input :colour %>
+    <%= f.input :image %>
+    <%= f.input :colour, collection: Product::COLOUR, prompt: "Select colour" %>
     <%= f.input :size %>
     <%= f.input :details %>
     <%= f.input :code %>
@@ -15,8 +16,9 @@
     <%= f.input :look %>
     <%= f.input :lookafterme %>
     <%= f.input :aboutme %>
-    <%= f.association :category %>
+    <%= f.association :category, prompt: "Select category" %>
   </div>
+  <output id="list"></output>
 
   <div class="form-actions">
     <%= f.button :submit %>

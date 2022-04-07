@@ -5,6 +5,11 @@
   </p>
 
   <p>
+    <strong>Image:</strong>
+    <%= image_tag(product.image_url(:default).to_s) %>
+  </p>
+
+  <p>
     <strong>Price:</strong>
     <%= product.price %>
   </p>
@@ -60,3 +65,4 @@
   </p>
 
 </div>
+
