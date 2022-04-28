@@ -1,5 +1,4 @@
-source "https://rubygems.org"
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+source 'https://rubygems.org'
 
 ruby "2.7.1"
 
@@ -28,8 +27,11 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 # Use Sass to process CSS
 gem "sassc-rails"
 
+#
+gem 'faker', '~> 1.8', '>= 1.8.7'
+
 # Sass adapter for the Rails asset pipeline [https://github.com/rails/sass-rails]
-# gem 'sass-rails', '>= 3.2'
+gem 'sass-rails', '>= 3.2'
 
 # Parse CSS and add vendor prefixes to CSS rules using values from the Can I Use website [https://github.com/ai/autoprefixer-rails]
 gem 'autoprefixer-rails', '~> 10.4', '>= 10.4.2.0'
@@ -53,7 +55,7 @@ gem "jbuilder"
 # gem "kredis"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
+gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
@@ -87,6 +89,33 @@ gem 'carrierwave', '~> 2.2', '>= 2.2.2'
 
 # Manipulate images with minimal use of memory via ImageMagick / GraphicsMagick [https://github.com/minimagick/minimagick]
 gem 'mini_magick', '~> 4.11'
+
+#
+gem 'fog-aws'
+
+#
+gem 'nokogiri'
+
+#
+gem 'will_paginate'
+
+#
+gem 'will_paginate-bootstrap'
+
+#
+gem 'email_validator'
+
+#
+gem 'figaro'
+
+#
+gem 'nicescroll-rails'
+
+#
+gem 'country_select'
+
+#
+gem 'ransack'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -136,12 +165,19 @@ group :development do
 
   # Makes spring watch files using the listen gem [https://github.com/rails/spring-watcher-listen]
   gem 'spring-watcher-listen', '~> 2.0', '>= 2.0.1'
+
+  #
+  gem 'rubocop'
+  gem 'rubocop-rails'
 end
 
-# group :test do
-#   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-#   gem "capybara"
-#   gem "selenium-webdriver"
-#   gem "webdrivers"
-# end
+group :test do
+  gem 'rails-controller-testing'
+  gem 'minitest-reporters'
+  gem 'guard-minitest'
+  gem 'minitest'
+end
 
+group :production do
+  gem 'pg'
+end
