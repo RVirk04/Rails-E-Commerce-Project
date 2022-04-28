@@ -112,7 +112,10 @@ gem 'figaro'
 gem 'nicescroll-rails'
 
 #
-gem 'country_select'
+# gem 'country_select'
+
+#
+gem 'rubocop'
 
 #
 gem 'ransack'
