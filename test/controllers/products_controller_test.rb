@@ -17,7 +17,9 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create product" do
     assert_difference("Product.count") do
-      post products_url, params: { product: { aboutme: @product.aboutme, brand: @product.brand, category_id: @product.category_id, code: @product.code, colour: @product.colour, details: @product.details, look: @product.look, lookafterme: @product.lookafterme, name: @product.name, price: @product.price, size: @product.size, sizeandfit: @product.sizeandfit } }
+      post products_url,
+           params: { product: { aboutme: @product.aboutme, brand: @product.brand, category_id: @product.category_id,
+                                code: @product.code, colour: @product.colour, details: @product.details, look: @product.look, lookafterme: @product.lookafterme, name: @product.name, price: @product.price, size: @product.size, sizeandfit: @product.sizeandfit } }
     end
 
     assert_redirected_to product_url(Product.last)
@@ -34,7 +36,9 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update product" do
-    patch product_url(@product), params: { product: { aboutme: @product.aboutme, brand: @product.brand, category_id: @product.category_id, code: @product.code, colour: @product.colour, details: @product.details, look: @product.look, lookafterme: @product.lookafterme, name: @product.name, price: @product.price, size: @product.size, sizeandfit: @product.sizeandfit } }
+    patch product_url(@product),
+          params: { product: { aboutme: @product.aboutme, brand: @product.brand, category_id: @product.category_id,
+                               code: @product.code, colour: @product.colour, details: @product.details, look: @product.look, lookafterme: @product.lookafterme, name: @product.name, price: @product.price, size: @product.size, sizeandfit: @product.sizeandfit } }
     assert_redirected_to product_url(@product)
   end
 
